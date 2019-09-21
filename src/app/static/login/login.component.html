@@ -1,0 +1,143 @@
+<div class="theme-layout" id="scrollup">
+		<div class="responsive-header">
+      <div class="responsive-menubar">
+        <div class="res-logo"><a href="" title=""><img src="../../../assets/images/logo.jpg" width="178px" height="50px" alt="" /></a>
+        </div>
+        <div class="menu-resaction">
+          <div class="res-openmenu">
+            <img src="../../../assets/images/icon.png" alt="" /> Menu
+          </div>
+          <div class="res-closemenu">
+            <img src="../../../assets/images/icon2.png" alt="" /> Close
+          </div>
+        </div>
+      </div>
+      <div class="responsive-opensec">
+        <div class="btn-extars">
+          <ul class="account-btns">
+            <li class="register-popup"><a routerLink="/register" title=""><i class="la la-key"></i> Register</a></li>
+          </ul>
+        </div><!-- Btn Extras -->
+
+        <div class="responsivemenu">
+          <ul>
+            <li class=""><a href="" title="">Home</a></li>
+            <li><a routerLink="/aboutus" title="">About Us</a></li>
+            <li><a routerLink="/termsconditions" title="">Terms & Condition</a></li>
+            <li class="menu-item-has-children">
+              <a href="#" title="">Help</a>
+              <ul>
+                <li><a routerLink="/faq" title="">FAQ's</a></li>
+                <li><a routerLink="/how_it_works" title="">How it works</a></li>
+                <li><a routerLink="/contact" title="">Contact Us</a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <header class="gradient">
+      <div class="menu-sec">
+        <div class="container">
+          <div class="logo">
+            <a href="" title=""><img src="../../../assets/images/logo.jpg" width="178px" height="50px" alt="" /></a>
+          </div><!-- Logo -->
+          <div class="btn-extars">
+              <ul class="account-btns">
+              <li><a routerLink="/register" ><i class="la la-key" ></i> Register</a>
+              </li>
+            </ul>
+          </div><!-- Btn Extras -->
+          <nav>
+              <ul>
+                  <li class=""><a href="" title="">Home</a></li>
+                  <li><a routerLink="/aboutus" title="">About Us</a></li>
+                  <li><a routerLink="/termsconditions" title="">Terms & Condition</a></li>
+                  <li class="menu-item-has-children">
+                    <a href="#" title="">Help</a>
+                    <ul>
+                      <li><a routerLink="/faq" title="">FAQ's</a></li>
+                      <li><a routerLink="/how_it_works" title="">How it works</a></li>
+                      <li><a routerLink="/contact" title="">Contact Us</a></li>
+                    </ul>
+                  </li>
+
+                </ul>
+          </nav><!-- Menus -->
+        </div>
+      </div>
+    </header>
+
+		<section>
+			<div class="block no-padding  gray">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="inner2">
+								<div class="inner-title2">
+									<h3>Login</h3>
+									<span>Login to access your account</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section>
+      <ng-flash-message></ng-flash-message>
+      <ngx-spinner></ngx-spinner>
+			<div class="block remove-bottom">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="account-popup-area signup-popup-box static">
+								<div class="account-popup">
+									<h3>Login</h3>
+									<div class="select-user">
+										<span (click)="selectUser('candidate');">Candidate</span>
+										<span (click)="selectUser('employer');">Employer</span>
+                  </div>
+                  <span *ngIf="userTypeStatus" class="text-danger">Please Select User Type</span>
+									<form (ngSubmit)="loginUser(loginform.value);" [formGroup]="loginform" >
+											<div class="cfield">
+												<input type="text" placeholder="Email" formControlName="email" />
+												<i class="la la-user"></i>
+                      </div>
+                      <div class="cfield">
+                          <span class="text-danger" *ngIf="loginform.controls['email'].hasError('required') && (loginform.controls['email'].dirty || loginform.controls['email'].touched)">This field is required</span>
+                          <span class="text-danger" *ngIf="loginform.controls['email'].hasError('pattern') && (loginform.controls['email'].dirty || loginform.controls['email'].touched)">Please validate your email</span>
+                      </div>
+											<div class="cfield">
+												<input type="password" placeholder="********" formControlName="password"/>
+												<i class="la la-key"></i>
+                      </div>
+                      <div class="cfield" *ngIf="!loginError">
+                          <span class="text-danger" *ngIf="loginform.controls['password'].hasError('required') && (loginform.controls['password'].dirty || loginform.controls['password'].touched)">This field is Required</span>
+                      </div>
+                      <div class="cfield" *ngIf="loginError">
+                        <span class="text-danger">Invalid Credentials Provided</span>
+                      </div>
+											<p class="remember-label">
+												<input type="checkbox" name="cb" id="cb1"><label for="cb1">Remember me</label>
+											</p>
+											<a href="#" title="">Forgot Password?</a>
+											<button type="submit">Login</button>
+                    </form>
+								</div>
+							</div><!-- SIGNUP POPUP -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<div class="bottom-line">
+				<span>© 2019 <b>E-empregos. </b> All rights reserved.</span>
+			</div>
+		</footer>
+</div>

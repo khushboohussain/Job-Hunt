@@ -1,0 +1,57 @@
+
+  <div class="responsive-header">
+    <div class="responsive-menubar">
+      <div class="res-logo"><a [routerLink]="['/employer/home']" routerLinkActive="true" title=""><img src="../../../assets/images/logo.jpg" width="178px" height="50px" alt="" />></a></div>
+      <div class="menu-resaction">
+        <div class="res-openmenu">
+          <img src="../../../assets/images/icon.png" alt="" /> Menu
+        </div>
+        <div class="res-closemenu">
+          <img src="../../../assets/images/icon2.png" alt="" /> Close
+        </div>
+      </div>
+    </div>
+    <div class="responsive-opensec">
+      <div class="btn-extars">
+        <a [routerLink]="['/employer/dashboard/post-new']" routerLinkActive="true" title="" class="post-job-btn"><i class="la la-plus"></i>Post
+          Jobs</a>
+      </div><!-- Btn Extras -->
+      <div class="responsivemenu">
+        <ul>
+          <li class="">
+            <a [routerLink]="['/employer/home']" routerLinkActive="true" title="">Home</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <header class="stick-top">
+    <div class="menu-sec">
+      <div class="container">
+        <div class="logo">
+          <a [routerLink]="['/employer/home']" routerLinkActive="true" title=""><img src="../../../assets/images/logo.jpg" width="178px" height="50px" alt="" /></a>
+        </div>
+        <div class="btns-profiles-sec">
+          <span><img src="{{emp.photo_url}}" style="width: 50px; height: 50px;" alt="" />{{emp.name}}<i
+              class="la la-angle-down"></i></span>
+          <ul>
+            <li><a [routerLink]="['/employer/dashboard/profile']" routerLinkActive="true" title=""><i class="la la-file-text"></i>Company Profile</a></li>
+            <li><a [routerLink]="['/employer/dashboard/manage-jobs']" routerLinkActive="true" title=""><i class="la la-briefcase"></i>Manage Jobs</a></li>
+            <li><a [routerLink]="['/employer/dashboard/resume']" routerLinkActive="true" title=""><i class="la la-paper-plane"></i>Resumes</a></li>
+            <li><a [routerLink]="['/employer/dashboard/packages']" routerLinkActive="true" title=""><i class="la la-user"></i>Packages</a></li>
+            <li><a [routerLink]="['/employer/dashboard/post-new']" routerLinkActive="true" title=""><i class="la la-file-text"></i>Post a New Job</a></li>
+            <li><a [routerLink]="['/employer/dashboard/change-password']" routerLinkActive="true" title=""><i class="la la-lock"></i>Change Password</a></li>
+            <li><a (click)="signOut();"><i class="la la-unlink"></i>Logout</a></li>
+          </ul>
+        </div>
+        <nav>
+          <ul>
+            <li class="">
+              <a [routerLink]="['/employer/home']" routerLinkActive="true" title="">Home</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>

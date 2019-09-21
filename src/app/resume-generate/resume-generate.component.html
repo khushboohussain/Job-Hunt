@@ -1,0 +1,93 @@
+<button (click)="goBack();" style="float:left;">Go Back</button>
+<button (click)="downloadPdf();">Download Pdf</button>
+<br />
+<br />
+<br />
+<br />
+<div id="cv" class="instaFade" style="background-color: rgb(170, 110, 110);">
+	<div class="mainDetails" style="background-color: rgb(110, 127, 170);">
+		<div id="name">
+			<h1 class="quickFade delayTwo" style="color: #990000">{{userData.profile.fullname}}</h1>
+			<h2 class="quickFade delayThree">{{userData.profile.job_title}}</h2>
+		</div>
+		
+		<div id="contactDetails" class="quickFade delayFour">
+			<ul>
+				<li>e: <a href="mailto:joe@bloggs.com" target="_blank">{{userData.profile.email}}</a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div id="mainArea" class="quickFade delayFive" style="background-color: white">
+		<section>
+			<article>
+				<div class="sectionTitle">
+					<h1 style="color: #990000; font-weight: bold;">Personal Profile</h1>
+				</div>
+				
+				<div class="sectionContent">
+					<p>{{userData.profile.description}}</p>
+				</div>
+			</article>
+			<div class="clear"></div>
+		</section>
+		
+		<section>
+			<div class="sectionTitle">
+				<h1 style="color: #990000; font-weight: bold;">Work Experience</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<article *ngFor="let wexp of userData.workExp">
+					<h2>{{wexp.company_name}} at {{wexp.position}}</h2>
+					<p class="subDetails">{{wexp.start_year}} - {{wexp.end_year}}</p>
+					<p>{{wexp.description}}</p>
+				</article>
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		<section>
+			<div class="sectionTitle">
+				<h1 style="color: #990000; font-weight: bold;">Key Skills</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<ul class="keySkills">
+					<li *ngFor="let skill of userData.skills">{{skill.skillname}}</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1 style="color: #990000; font-weight: bold;">Education</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<article *ngFor="let edu of userData.education">
+					<h2>{{edu.institution_name}} {{edu.education}}</h2>
+					<p class="subDetails">{{edu.programme}} ( {{edu.start_year}} - {{edu.end_year}} )</p>
+					<p>{{edu.description}}</p>
+				</article>
+			</div>
+			<div class="clear"></div>
+		</section>
+		<section>
+			<div class="sectionTitle">
+				<h1 style="color: #990000; font-weight: bold;">Awards</h1>
+			</div>
+			<div class="sectionContent">
+				<article *ngFor="let edu of userData.awards">
+					<h2>{{edu.name}}</h2>
+					<p class="subDetails">{{edu.year}}</p>
+					<p>{{edu.description}}</p>
+				</article>
+			</div>
+			<div class="clear"></div>
+		</section>
+	</div>
+</div>

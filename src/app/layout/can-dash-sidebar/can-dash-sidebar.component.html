@@ -1,0 +1,13 @@
+<div class="widget">
+  <div class="tree_widget-sec">
+    <ul>
+      <li><a [routerLink]= "['/candidate/dashboard/profile']" routerActiveLink="true" title=""><i class="la la-file-text"></i>My Profile</a></li>
+      <li><a [routerLink]= "['/candidate/dashboard/resume']" routerActiveLink="true" title=""><i class="la la-briefcase"></i>My Resume</a></li>
+      <li><a [routerLink]= "['/candidate/dashboard/shortlist']" routerActiveLink="true" title=""><i class="la la-money"></i>Shorlisted Job</a></li>
+      <li><a [routerLink]= "['/candidate/dashboard/applied-jobs']" routerActiveLink="true" title=""><i class="la la-paper-plane"></i>Applied Job</a></li>
+      <!-- <li><a [routerLink]= "['/candidate/dashboard/coverletter']" routerActiveLink="true" title=""><i class="la la-file-text"></i>Cv & Cover Letter</a></li> -->
+      <li><a [routerLink]= "['/candidate/dashboard/change-password']" routerActiveLink="true" title=""><i class="la la-flash"></i>Change Password</a></li>
+      <li><a (click)="signOut();"><i class="la la-unlink"></i>Logout</a></li>
+    </ul>
+  </div>
+</div>

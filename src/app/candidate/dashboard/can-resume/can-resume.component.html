@@ -1,0 +1,318 @@
+<section class="overlape">
+        <div class="block no-padding">
+            <div data-velocity="-.1"
+                style="background: url(http://placehold.it/1600x800) repeat scroll 50% 422.28px transparent;"
+                class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+            <div class="container fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="inner-header">
+                            <h3>Welcome {{username}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <ngx-spinner></ngx-spinner>
+    <section>
+        <div class="block remove-top">
+            <div class="container">
+                <!-- <div class="row">
+                    <a style="margin-left: 25%; width: 25%;color: white;border-color: white;cursor: pointer; background-color: #353d73;" class="apply-thisjob"  title="" [routerLink]= "['/candidate/dashboard/resume-addnew']"><i class="la la-plus"></i>Add New CV</a>
+                </div> -->
+                <div class="row no-gape">
+                    <aside class="col-lg-3 column border-right">
+                        <app-can-dash-sidebar></app-can-dash-sidebar>
+                    </aside>
+                    <div class="col-lg-9 column">
+                        <div class="padding-left">
+                            <div class="manage-jobs-sec">
+                                <div class="border-title">
+                                    <h3>Resume</h3>
+                                    <a (click)="downloadCv();"
+                                    style="font-weight: bold;">Download Resume </a>
+                                </div>
+
+                                <!-- <div class="col-lg-6">
+                                    <span class="pf-title">Resume Name</span>
+                                    <div class="pf-field">
+                                        <input type="text" name="name" [(ngModel)]="userResume.name" placeholder="John Resume"/>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <button (click)="resumeSubmit();">Submit</button>
+                                </div> -->
+
+                                <div class="border-title">
+                                    <h3>Education</h3><a (click)="addEdu();" title=""><i class="la la-plus"></i> Add Education</a>
+                                </div>
+                                <div class="edu-history-sec" *ngIf="addEduCheck" style="margin-bottom: 30px;" [@slideInOut]>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Education Level</span>
+                                            <div class="pf-field">
+                                                <input type="text" name="education" [(ngModel)]="userEdu.education" placeholder="University/College"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <span class="pf-title">Start Year</span>
+                                            <div class="pf-field">
+                                                <input type="text" name="start_year"  [(ngModel)]="userEdu.start_year"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <span class="pf-title">End Year</span>
+                                            <div class="pf-field">
+                                                <input type="text" name="end_year"  [(ngModel)]="userEdu.end_year"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Institution Name</span>
+                                            <div class="pf-field">
+                                                <input type="text" name="institution_name"  [(ngModel)]="userEdu.institution_name"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Programme</span>
+                                            <div class="pf-field">
+                                                <input type="text" name="programme"  [(ngModel)]="userEdu.programme"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <span class="pf-title">Description</span>
+                                            <div class="pf-field">
+                                                    <textarea name="description" [(ngModel)]="userEdu.description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <button (click)="educationSubmit();">Submit</button>
+                                            <button style="margin-right: 40px;" (click)="addEdu();">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edu-history-sec">
+                                    <div class="edu-history" *ngFor="let usEd of userEducations; let i = index">
+                                        <i class="la la-graduation-cap"></i>
+                                        <div class="edu-hisinfo">
+                                            <h3>{{usEd.education}}</h3>
+                                            <i>{{usEd.start_year}} - {{usEd.end_year}}</i>
+                                            <span>{{usEd.institution_name}}<i>{{usEd.programme}}</i></span>
+                                            <p>{{usEd.description}}</p>
+                                        </div>
+                                        <ul class="action_job">
+                                            <li><span>Edit</span><a (click)="editEducation(i);" title=""><i
+                                                        class="la la-pencil"></i></a></li>
+                                            <li><span>Delete</span><a (click)="deleteEducation(i);" title=""><i
+                                                        class="la la-trash-o"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <div class="border-title">
+                                    <h3>Work Experience</h3><a (click)="addWork();" title=""><i class="la la-plus"></i> Add Experience</a>
+                                </div>
+                                <div class="edu-history-sec" *ngIf="addWorkCheck" style="margin-bottom: 30px;" [@slideInOut]>
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <span class="pf-title">Post</span>
+                                            <div class="pf-field">
+                                                <input type="text" name="position" [(ngModel)]="userWorkExp.position" placeholder=""/>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <span class="pf-title">Company Name</span>
+                                            <div class="pf-field">
+                                                <input type="text" name="company_name" [(ngModel)]="userWorkExp.company_name" placeholder=""/>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <span class="pf-title">Start Year</span>
+                                            <div class="pf-field">
+                                                <input type="text" name="start_year"  [(ngModel)]="userWorkExp.start_year"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <span class="pf-title">End Year</span>
+                                            <div class="pf-field">
+                                                <input type="text" name="end_year"  [(ngModel)]="userWorkExp.end_year"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <span class="pf-title">Description</span>
+                                            <div class="pf-field">
+                                                    <textarea name="description" [(ngModel)]="userWorkExp.description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <button (click)="experienceSubmit();">Submit</button>
+                                            <button style="margin-right: 40px;" (click)="addWork();">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edu-history-sec">
+                                    <div class="edu-history style2" *ngFor="let usEd of userWorkExpArr; let i = index" userWorkExpArr>
+                                        <i></i>
+                                        <div class="edu-hisinfo">
+                                            <h3>{{usEd.position}}<span>{{usEd.company_name}}</span></h3>
+                                            <i>{{usEd.start_year}} - {{usEd.end_year}}</i>
+                                            <p>{{usEd.description}}</p>
+                                        </div>
+                                        <ul class="action_job">
+                                            <li><span>Edit</span><a (click)="editWorkExp(i);" title=""><i
+                                                        class="la la-pencil"></i></a></li>
+                                            <li><span>Delete</span><a (click)="deleteWorkExp(i);" title=""><i
+                                                        class="la la-trash-o"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="border-title">
+                                    <h3>Portfolio</h3><a title=""><i class="la la-plus"></i> Add
+                                        Portfolio</a>
+                                </div>
+                                <div class="mini-portfolio">
+                                    <div class="mp-row">
+                                        <div class="mp-col">
+                                            <div class="mportolio"><img src="http://placehold.it/165x115"
+                                                    alt="" /><a title=""><i class="la la-search"></i></a>
+                                            </div>
+                                            <ul class="actison_job">
+                                                <li><span>
+                                                        <p style="text-align: center;">Title here</p>
+                                                    </span></li>
+                                            </ul>
+                                            <ul class="action_job">
+                                                <li><span>Edit</span><a title=""><i
+                                                            class="la la-pencil"></i></a></li>
+                                                <li><span>Delete</span><a title=""><i
+                                                            class="la la-trash-o"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>-->
+
+
+                                <div class="border-title">
+                                    <h3>Professional Skills</h3><a (click)="skillbtn();" title=""><i class="la la-plus"></i> Add
+                                        Skills</a>
+                                </div>
+                                <div class="edu-history-sec" *ngIf="skillCheck" style="margin-bottom: 30px;" [@slideInOut]>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Skill Name</span>
+                                            <div class="pf-field">
+                                                <input type="text" name="position" [(ngModel)]="userSkillObj.skillname" placeholder=""/>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Skill Range</span>
+                                            <div class="pf-field">
+                                                <input type="range" name="cowbell" min="0" max="100" step="1" class="slider" [(ngModel)]="userSkillObj.skillrate">
+                                                <p style="font-size: 12px;">Value: {{userSkillObj.skillrate}} </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <button (click)="skillSubmit();">Submit</button>
+                                            <button style="margin-right: 40px;" (click)="skillbtn();">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress-sec">
+                                    <div class="progress-sec with-edit" *ngFor="let usEd of userSkillArr; let i = index">
+                                        <span>{{usEd.skillname}}</span>
+                                        <div class="progressbar">
+                                            <div class="progress" [style.width.%] = usEd.skillrate><span>{{usEd.skillrate}}</span></div>
+                                        </div>
+                                        <ul class="action_job">
+                                            <li><span>Edit</span><a (click)="editSkillbtn(i);" title=""><i class="la la-pencil"></i></a></li>
+                                            <li><span>Delete</span><a title=""><i (click)="deleteSkill(i)" class="la la-trash-o"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="border-title">
+                                    <h3>Awards</h3><a (click)="awardbtn();" title=""><i class="la la-plus"></i> Add Awards</a>
+                                </div>
+                                <div class="edu-history-sec" *ngIf="awardsCheck" style="margin-bottom: 30px;" [@slideInOut]>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Name</span>
+                                            <div class="pf-field">
+                                                <input type="text" name="name" [(ngModel)]="awardsObj.name" placeholder=""/>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Year</span>
+                                            <div class="pf-field">
+                                                <input type="text" name="year" [(ngModel)]="awardsObj.year" placeholder=""/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <span class="pf-title">Description</span>
+                                            <div class="pf-field">
+                                                    <textarea name="description" [(ngModel)]="awardsObj.description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <button (click)="awardSubmit();">Submit</button>
+                                            <button style="margin-right: 40px;" (click)="awardbtn();">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edu-history-sec">
+                                    <div class="edu-history style2" *ngFor="let usEd of awardsArr; let i = index">
+                                        <i></i>
+                                        <div class="edu-hisinfo">
+                                            <h3>{{usEd.name}}</h3>
+                                            <i>{{usEd.year}}</i>
+                                            <p>{{usEd.description}}</p>
+                                        </div>
+                                        <ul class="action_job">
+                                            <li><span>Edit</span><a (click)="editAwardBtn(i);" title=""><i class="la la-pencil"></i></a></li>
+                                            <li><span>Delete</span><a (click)="deleteAward(i);" title=""><i class="la la-trash-o"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                  <span class="pf-title">Cover Letter</span>
+                                  <div class="pf-field">
+                                      <textarea [(ngModel)]="userResume.coverLetter"></textarea>
+                                  </div>
+                              </div>
+                              <button (click)="resumeSubmit();">Add Cover</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

@@ -1,0 +1,60 @@
+<section class="overlape">
+    <div class="block no-padding">
+        <div data-velocity="-.1"
+            style="background: url(http://placehold.it/1600x800) repeat scroll 50% 422.28px transparent;"
+            class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+        <div class="container fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-header">
+                        <h3>Welcome {{username}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="block remove-top">
+        <div class="container">
+            <div class="row no-gape">
+                <aside class="col-lg-3 column border-right">
+                    <app-can-dash-sidebar></app-can-dash-sidebar>
+                </aside>
+                <div class="col-lg-9 column">
+                    <div class="padding-left">
+                        <div class="manage-jobs-sec">
+                            <div class="border-title">
+                                <h3>Shortlisted jobs</h3>
+                            </div>
+                            <div class="job-listing wtabs" *ngFor="let job of shortListedJob; let i = index;">
+                                <div class="job-title-sec">
+                                    <div class="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
+                                    <h3><a (click)="canJobSingle(i);" title="">{{job.job_title}}</a></h3>
+                                    <span>{{job.job_type}}</span>
+                                    <div class="job-lctn">{{job.applied_date}}</div>
+                                </div>
+                                <div class="job-list-del">
+                                    <a (click)="deleteShort(i);" title=""><i class="la la-trash-o"></i></a>
+                                </div>
+                            </div>
+                            <div class="pagination">
+                                <ul>
+                                    <li class="prev"><a href=""><i class="la la-long-arrow-left"></i> Prev</a>
+                                    </li>
+                                    <li><a href="">1</a></li>
+                                    <li class="active"><a href="">2</a></li>
+                                    <li><a href="">3</a></li>
+                                    <li><span class="delimeter">...</span></li>
+                                    <li><a href="">14</a></li>
+                                    <li class="next"><a href="">Next <i class="la la-long-arrow-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

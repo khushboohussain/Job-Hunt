@@ -1,0 +1,98 @@
+<section class="overlape">
+  <div class="block no-padding">
+    <div data-velocity="-.1"
+      style="background: url(http://placehold.it/1600x800) repeat scroll 50% 422.28px transparent;"
+      class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+    <div class="container fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="inner-header">
+            <h3>{{empProfile.fullname}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="block">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 column">
+          <div class="job-single-sec style3">
+            <div class="job-head-wide">
+              <div class="row">
+                <div class="col-lg-10">
+                  <div class="job-single-head3 emplye">
+                    <div class="job-thumb"> <img src="{{empProfile.photo_url}}" style="width: 120px; height: 95px;" alt="" />
+                    </div>
+                    <div class="job-single-info3">
+                      <h3>{{empProfile.name}}</h3>
+                      <span><i class="la la-map-marker"></i>{{empProfile.city}},
+                        {{empProfile.country}}</span>
+
+                    </div>
+                  </div><!-- Job Head -->
+                </div>
+              </div>
+            </div>
+            <div class="job-wide-devider">
+              <div class="row">
+                <div class="col-lg-8 column">
+                  <div class="job-details">
+                    <h3>About Business Network</h3>
+                    <p>{{empProfile.description}}</p>
+                  </div>
+                  <div class="recent-jobs">
+                    <h3>Available Jobs</h3>
+                    <div class="job-list-modern">
+                      <div class="job-listings-sec no-border" *ngFor="let job of jobs; let i = index;">
+                        <div class="job-listing wtabs noimg">
+                          <div class="job-title-sec">
+                            <h3><a (click)="canJobSingle(i);" title="">{{job.job_title}}</a>
+                            </h3>
+                            <span>{{job.job_type}}</span>
+                            <div class="job-lctn"><i
+                                class="la la-map-marker"></i>{{job.city}},
+                              {{job.country}}</div>
+                          </div>
+                          <div class="job-style-bx">
+                            <a (click)="canJobSingle(i);"><span
+                                class="job-is ft ">View</span></a>
+                            <i>{{job.created_date}}</i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 column">
+                  <div class="job-overview">
+                    <h3>Company Information</h3>
+                    <ul>
+                      <li><i class="la la-file-text"></i>
+                        <h3>Posted Jobs</h3><span>4</span>
+                      </li>
+                      <li><i class="la la-map"></i>
+                        <h3>Location</h3><span>{{empProfile.city}}, {{empProfile.country}}</span>
+                      </li>
+                      <li><i class="la la-bars"></i>
+                        <h3>Categories</h3><span>{{empProfile.categories}}</span>
+                      </li>
+                      <li><i class="la la-clock-o"></i>
+                        <h3>Since</h3><span>{{empProfile.since}}</span>
+                      </li>
+                      <li><i class="la la-users"></i>
+                        <h3>Team Size</h3><span>{{empProfile.teamsize}}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,91 @@
+<div class="responsive-header five">
+    <div class="responsive-menubar">
+        <div class="res-logo"><a [routerLink]="['/candidate/home']" routerLinkActive="true" title=""><img src="../../../assets/images/logo.jpg"
+                    alt="" /></a>
+        </div>
+        <div class="menu-resaction">
+            <div class="res-openmenu">
+                <img src="../../../assets/images/icon.png" alt="" /> Menu
+            </div>
+            <div class="res-closemenu">
+                <img src="../../../assets/images/icon2.png" alt="" /> Close
+            </div>
+        </div>
+    </div>
+    <div class="responsive-opensec">
+        <div class="responsivemenu">
+            <ul>
+                <li class="" [routerLink]="['/candidate/home']" routerLinkActive="true">
+                    <a title="">Home</a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a title="">Our Members</a>
+                    <ul>
+                        <li><a [routerLink]="['/candidate/home/employer-list']" routerLinkActive="true" title="">Employers List</a></li>
+                        <li><a [routerLink]="['/candidate/home/candidate-list']" routerLinkActive="true"  title="">Candidates List</a></li>
+                    </ul>
+                </li>
+                <li><a [routerLink]="['/candidate/dashboard']" routerLinkActive="true" title="">Dashboard</a> </li>
+                <li class="menu-item-has-children">
+
+                    <a title="">Basic</a>
+                    <ul>
+                        <li><a [routerLink]="['/aboutus']" routerLinkActive="true" title="">About Us</a></li>
+
+                        <li><a [routerLink]="['/contact']" routerLinkActive="true" title="">Contact Us</a></li>
+
+                        <li><a [routerLink]="['/faq']" routerLinkActive="true" title="">FAQ's</a></li>
+
+                        <li><a [routerLink]="['/how_it_works']" routerLinkActive="true" title="">How it works</a></li>
+
+                        <li><a [routerLink]="['/termsconditions']" routerLinkActive="true" title="">Terms & Condition</a></li>
+                    </ul>
+                </li>
+                <li><a (click)="signOut();">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<header class="style5">
+    <div class="menu-sec ">
+        <div class="container fluid">
+            <nav>
+                <ul>
+                    <li class="">
+                        <a [routerLink]="['/candidate/home']" routerLinkActive="true" title="">Home</a>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#" title="">Our Members</a>
+                        <ul>
+                            <li><a [routerLink]="['/candidate/home/employer-list']" routerLinkActive="true" title="">Employers List</a></li>
+                            <li><a [routerLink]="['/candidate/home/candidate-list']" routerLinkActive="true"  title="">Candidates List</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a title="">Basic</a>
+                        <ul>
+                            <li><a [routerLink]="['/aboutus']" routerLinkActive="true" title="">About Us</a></li>
+
+                            <li><a [routerLink]="['/contact']" routerLinkActive="true" title="">Contact Us</a></li>
+
+                            <li><a [routerLink]="['/faq']" routerLinkActive="true" title="">FAQ's</a></li>
+
+                            <li><a [routerLink]="['/how_it_works']" routerLinkActive="true" title="">How it works</a></li>
+
+                            <li><a [routerLink]="['/termsconditions']" routerLinkActive="true" title="">Terms & Condition</a></li>
+                        </ul>
+                    </li>
+                    <li><a (click)="signOut();">Log Out</a> </li>
+                </ul>
+            </nav><!-- Menus -->
+            <div class="logo">
+                <a href="#" title=""><img src="../../../assets/images/logo.jpg" width="112px" height="50px" alt="" /></a>
+            </div><!-- Logo -->
+
+            <div class="btn-extars" style="margin-right: 3%; background-color: rgb(38, 174, 97);">
+                <a [routerLink]="['/candidate/dashboard']" routerlinkActive="true" title="" class="post-job-btn"><i class="la"></i>Dashboard</a>
+            </div><!-- Btn Extras -->
+        </div>
+    </div>
+</header>

@@ -1,0 +1,70 @@
+<section class="overlape">
+  <div class="block no-padding">
+    <div data-velocity="-.1" style="background: url(http://placehold.it/1600x800) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+    <div class="container fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="inner-header">
+            <h3>Employers</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="block less-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <section id="options" class="alpha-pag full">
+            <div class="option-isotop">
+              <ul id="filter" class="option-set" data-option-key="filter">
+                <li><a (click)="filterEmp('all')" data-option-value="*" class="selected">ALL</a></li>
+                <li><a (click)="filterEmp('a')">A</a></li>
+                <li><a (click)="filterEmp('b')">B</a></li>
+                <li><a (click)="filterEmp('c')">C</a></li>
+                <li><a (click)="filterEmp('d')">D</a></li>
+                <li><a (click)="filterEmp('e')">E</a></li>
+                <li><a (click)="filterEmp('f')">F</a></li>
+                <li><a (click)="filterEmp('g')">G</a></li>
+                <li><a (click)="filterEmp('h')">H</a></li>
+                <li><a (click)="filterEmp('i')">I</a></li>
+                <li><a (click)="filterEmp('j')">J</a></li>
+                <li><a (click)="filterEmp('k')">K</a></li>
+                <li><a (click)="filterEmp('l')">L</a></li>
+                <li><a (click)="filterEmp('m')">M</a></li>
+                <li><a (click)="filterEmp('n')">N</a></li>
+                <li><a (click)="filterEmp('o')">O</a></li>
+                <li><a (click)="filterEmp('p')">P</a></li>
+                <li><a (click)="filterEmp('q')">Q</a></li>
+                <li><a (click)="filterEmp('r')">R</a></li>
+                <li><a (click)="filterEmp('s')">S</a></li>
+                <li><a (click)="filterEmp('t')">T</a></li>
+                <li><a (click)="filterEmp('u')">U</a></li>
+                <li><a (click)="filterEmp('v')">V</a></li>
+                <li><a (click)="filterEmp('w')">W</a></li>
+                <li><a (click)="filterEmp('x')">X</a></li>
+                <li><a (click)="filterEmp('y')">Y</a></li>
+                <li><a (click)="filterEmp('z')">Z</a></li>
+              </ul>
+            </div>
+          </section><!-- FILTER BUTTONS -->
+          <div class="emply-text-sec">
+            <div class="row" id="masonry_abc">
+              <div class="col-lg-4 a" *ngFor="let emp of emptoDisplay; let i = index;">
+                <div class="emply-text">
+                  <h3><span>{{i + 1}}</span></h3>
+                  <ul>
+                    <li><a (click)="empSingleRoute(emp.userId);" title="">{{emp.name}}</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

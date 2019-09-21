@@ -1,0 +1,86 @@
+<section class="overlape">
+  <div class="block no-padding">
+    <div data-velocity="-.1"
+      style="background: url(http://placehold.it/1600x800) repeat scroll 50% 422.28px transparent;"
+      class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+    <div class="container fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="inner-header">
+            <h3>{{jobSingle.job_title}}</h3>
+            <div class="job-statistic">
+              <span>{{jobSingle.job_type}}</span>
+                <p><i class="la la-map-marker"></i> {{jobSingle.city}}, {{jobSingle.country}}</p>
+                <p><i class="la la-calendar-o"></i>Posted {{jobSingle.created_date}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="block">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 column">
+          <div class="job-single-sec">
+            <div class="job-single-head">
+              <div class="job-thumb"> <img src="http://placehold.it/107x101" alt="" /> </div>
+              <div class="job-head-info">
+                <h4>{{jobSingle.job_title}}</h4>
+                <span> {{jobSingle.address}}, {{jobSingle.city}}, {{jobSingle.country}}</span>
+              </div>
+            </div><!-- Job Head -->
+            <div class="job-details">
+              <h3>Job Description</h3>
+              <p>{{jobSingle.description}}</p>
+              <h3>Required Knowledge, Skills, and Abilities</h3>
+              <ul>
+                <li *ngFor="let js of jobSingle.skills">{{js}}</li>
+              </ul>
+              <h3>Education + Experience</h3>
+              <ul>
+                <li>{{jobSingle.qualification}}</li>
+                <li>{{jobSingle.experience}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 column">
+          <a class="apply-thisjob" (click)="applyJob();" title=""><i class="la la-paper-plane"></i>Apply for
+            job</a>
+          <a style="margin-top:2%" (click)="shortlistJob();" class="apply-thisjob" title=""><i class="la la-heart-o"></i>Shortlist
+            </a>
+          <div class="job-overview">
+            <h3>Job Overview</h3>
+            <ul>
+              <li><i class="la la-money"></i>
+                <h3>Offerd Salary</h3><span>{{jobSingle.offered_sal}}</span>
+              </li>
+              <li><i class="la la-mars-double"></i>
+                <h3>Gender</h3><span>{{jobSingle.gender}}</span>
+              </li>
+              <li><i class="la la-thumb-tack"></i>
+                <h3>Career Level</h3><span>{{jobSingle.career_level}}</span>
+              </li>
+              <li><i class="la la-puzzle-piece"></i>
+                <h3>Industry</h3><span>{{jobSingle.industry}}</span>
+              </li>
+              <li><i class="la la-shield"></i>
+                <h3>Experience</h3><span>{{jobSingle.experience}}</span>
+              </li>
+              <li><i class="la la-line-chart "></i>
+                <h3>Qualification</h3><span>{{jobSingle.qualification}}</span>
+              </li>
+            </ul>
+          </div><!-- Job Overview -->
+          <div class="extra-job-info">
+            <span><i class="la la-clock-o"></i><strong>Deadline</strong>{{jobSingle.dead_line}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

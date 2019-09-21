@@ -1,0 +1,188 @@
+<section class="overlape">
+  <div class="block remove-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="cand-single-user">
+            <div class="share-bar circle"></div>
+            <div class="can-detail-s">
+              <div class="cst"><img src="{{userProfile.photo_url}}" alt="" /></div>
+              <h3>{{userProfile.fullname}}</h3>
+              <span><i>{{userProfile.job_title}}</i></span>
+              <p>{{userProfile.email}}</p>
+              <p><i class="la la-map-marker"></i>{{userProfile.city}} / {{userProfile.country}}</p>
+              <div class="skills-badge">
+                <span *ngFor="let sk of userSkills">{{sk.skillname}}</span>
+              </div>
+            </div>
+            <div class="download-cv"></div>
+          </div>
+          <div class="cand-details-sec">
+            <div class="row no-gape">
+              <div class="col-lg-9 column">
+                <div class="cand-details">
+                  <div class="job-overview style2">
+                    <ul>
+                      <li><i class="la la-money"></i>
+                        <h3>Offerd Salary</h3><span>{{userProfile.expected_sal_min}}$ - {{userProfile.expected_sal_max}}$</span>
+                      </li>
+                      <li><i class="la la-shield"></i>
+                        <h3>Experience</h3><span>{{userProfile.experience}}</span>
+                      </li>
+                      <li><i class="la la-line-chart "></i>
+                        <h3>Qualification</h3><span>{{userProfile.education_levels}}</span>
+                      </li>
+                    </ul>
+                  </div><!-- Job Overview -->
+                  <h2>Candidates About</h2>
+                  <p>{{userProfile.description}}</p>
+                  <div class="edu-history-sec">
+                    <h2>Education</h2>
+                    <div class="edu-history" *ngFor="let edu of userEducation">
+                      <i class="la la-graduation-cap"></i>
+                      <div class="edu-hisinfo">
+                        <h3>{{edu.education}}</h3>
+                        <i>{{edu.start_year}} - {{edu.end_year}}</i>
+                        <span>{{edu.institution_name}}<i>{{edu.programme}}</i></span>
+                        <p>{{edu.description}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="edu-history-sec">
+                    <h2>Work & Experience</h2>
+                    <div class="edu-history style2" *ngFor="let work of userWork">
+                      <i></i>
+                      <div class="edu-hisinfo">
+                        <h3>{{work.position}} <span>{{work.company_name}}</span></h3>
+                        <i>{{work.start_year}} - {{work.end_year}}</i>
+                        <p>{{work.description}}.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="mini-portfolio">
+                    <h2>Portfolio</h2>
+                    <div class="mp-row">
+                      <div class="mp-col">
+                        <div class="mportolio"><img src="http://placehold.it/165x115"
+                            alt="" /><a title=""><i
+                              class="la la-search"></i></a></div>
+                      </div>
+                      <div class="mp-col">
+                        <div class="mportolio"><img src="http://placehold.it/165x115"
+                            alt="" /><a title=""><i
+                              class="la la-search"></i></a></div>
+                      </div>
+                      <div class="mp-col">
+                        <div class="mportolio"><img src="http://placehold.it/165x115"
+                            alt="" /><a title=""><i
+                              class="la la-search"></i></a></div>
+                      </div>
+                      <div class="mp-col">
+                        <div class="mportolio"><img src="http://placehold.it/165x115"
+                            alt="" /><a title=""><i
+                              class="la la-search"></i></a></div>
+                      </div>
+                    </div>
+                  </div> -->
+                  <div class="progress-sec">
+                    <h2>Professional Skills</h2>
+                    <div class="progress-sec style2" *ngFor="let skill of userSkills">
+                      <span>{{skill.skillname}}</span>
+                      <div class="progressbar">
+                        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                        <div class="progress" *ngIf="skill.skillrate > 90 && skill.skillrate < 100">
+                          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                        </div>
+                        <div class="progress" *ngIf="skill.skillrate > 80 && skill.skillrate < 90">
+                          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                        </div>
+                        <div class="progress" *ngIf="skill.skillrate > 70 && skill.skillrate < 80">
+                          <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                        </div>
+                        <div class="progress" *ngIf="skill.skillrate > 60 && skill.skillrate < 70">
+                          <i></i><i></i><i></i><i></i><i></i><i></i>
+                        </div>
+                        <div class="progress" *ngIf="skill.skillrate > 50 && skill.skillrate < 60">
+                          <i></i><i></i><i></i><i></i><i></i>
+                        </div>
+                        <div class="progress" *ngIf="skill.skillrate > 40 && skill.skillrate < 50">
+                          <i></i><i></i><i></i><i></i>
+                        </div>
+                        <div class="progress" *ngIf="skill.skillrate > 30 && skill.skillrate < 40">
+                          <i></i><i></i><i></i>
+                        </div>
+                        <div class="progress" *ngIf="skill.skillrate > 20 && skill.skillrate < 30">
+                          <i></i><i></i>
+                        </div>
+                        <div class="progress" *ngIf="skill.skillrate > 1 && skill.skillrate < 20">
+                          <i></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="edu-history-sec">
+                    <h2>Awards</h2>
+                    <div class="edu-history style2" *ngFor="let award of userAwards">
+                      <i></i>
+                      <div class="edu-hisinfo">
+                        <h3>{{award.name}}</h3>
+                        <i>{{award.year}}</i>
+                        <p>{{award.description}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 column">
+                <div class="job-overview style3">
+                  <ul>
+                    <li><i class="la la-briefcase"></i>
+                      <h3>Candidates About</h3>
+                      <p>{{userProfile.description}}</p>
+                    </li>
+                    <li><i class="la la-graduation-cap"></i>
+                      <h3>Education</h3>
+                      <div class="edu-history" *ngFor="let edu of userEducation">
+                          <h5>{{edu.education}}</h5>
+                          <i>{{edu.start_year}} - {{edu.end_year}}</i>
+                          {{edu.institution_name}}<i>{{edu.programme}}</i>
+                          <p>{{edu.description}}</p>
+                      </div>
+                    </li>
+                    <li><i class="la la-file-text"></i>
+                      <h3>Work Experience</h3>
+                      <div *ngFor="let work of userWork">
+                        <h5>{{work.position}} <span>{{work.company_name}}</span></h5>
+                        <i>{{work.start_year}} - {{work.end_year}}</i>
+                        <p>{{work.description}}.</p>
+                      </div>
+                    </li>
+                    <!-- <li><i class="la la-puzzle-piece"></i>
+                      <h3>Portfolio</h3>
+                    </li> -->
+                    <li><i class="la la-thumb-tack"></i>
+                      <h3>Professional Skills</h3>
+                      <div *ngFor="let skill of userSkills">
+                          <span>{{skill.skillname}}</span>
+                          <span>{{skill.skillrate}}</span>
+                      </div>
+                    </li>
+                    <li><i class="la la-line-chart "></i>
+                      <h3>Awards</h3>
+                      <div class="edu-history style2" *ngFor="let award of userAwards">
+                            <h5>{{award.name}}</h5>
+                              <b>{{award.year}}</b>
+                            <p>{{award.description}}</p>
+                        </div>
+                    </li>
+                  </ul>
+
+                </div><!-- Job Overview -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

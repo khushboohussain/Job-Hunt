@@ -1,0 +1,58 @@
+<section class="overlape">
+        <div class="block no-padding">
+            <div data-velocity="-.1"
+                style="background: url(http://placehold.it/1600x800) repeat scroll 50% 422.28px transparent;"
+                class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+            <div class="container fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="inner-header">
+                            <h3>Welcome {{username}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="block no-padding">
+            <div class="container">
+                <div class="row no-gape">
+                    <aside class="col-lg-3 column border-right">
+                        <app-can-dash-sidebar></app-can-dash-sidebar>
+                    </aside>
+                    <div class="col-lg-9 column">
+                        <div class="padding-left">
+                            <div class="manage-jobs-sec">
+                                <h3>CV & Cover Letter</h3>
+                                <div class="coverletter-sec">
+                                    <form (ngSubmit)="coverLetterSubmit($event);">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <span class="pf-title">Select Your CV</span>
+                                                <div class="pf-field">
+                                                    <select data-placeholder="Select Your CV" class="chosen" (change)="onCVChanged($event)">
+                                                        <option *ngFor="let cv of userCv" [value]="cv.cvId">{{ cv.name }}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <span class="pf-title">Cover Letter</span>
+                                                <div class="pf-field">
+                                                    <textarea [(ngModel)]="userCover.coverLetter"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <button type="submit">Update</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

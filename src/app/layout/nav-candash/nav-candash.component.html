@@ -1,0 +1,86 @@
+<div class="responsive-header">
+    <div class="responsive-menubar">
+      <div class="res-logo"><a title=""><img src="{{photourl}}" alt="" /></a></div>
+      <div class="menu-resaction">
+        <div class="res-openmenu">
+          <img src="../../../assets/images/icon.png" alt="" /> Menu
+        </div>
+        <div class="res-closemenu">
+          <img src="../../../assets/images/icon2.png" alt="" /> Close
+        </div>
+      </div>
+    </div>
+    <div class="responsive-opensec">
+
+
+      <div class="responsivemenu">
+        <ul>
+          <li>
+            <a [routerLink]="['/candidate/home']" routerActivelink="true" title="">Home</a>
+
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <header class="stick-top">
+    <div class="menu-sec">
+      <div class="container">
+        <div class="logo">
+          <a title=""><img src="../../../assets/images/logo.jpg" width="178px" height="80px" alt="" /></a>
+        </div>
+        <div class="my-profiles-sec">
+          <span><img src="{{photourl}}" style="width: 50px; height: 50px" alt="" />{{username}}<i
+              class="la la-bars"></i></span>
+        </div>
+        <!-- <div class="wishlist-dropsec">
+          <span><i class="la la-heart"></i><strong>5</strong></span>
+          <div class="wishlist-dropdown">
+            <ul class="scrollbar">
+              <li>
+                <div class="job-listing">
+                  <div class="job-title-sec">
+                    <div class="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
+                    <h3><a [routerLink]="['/candidate/home/job-single']" routerActiveLink="true" title="">Web Designer /
+                        Developer</a></h3>
+                    <span>sss ddd</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div> -->
+        <nav>
+          <ul>
+            <li class=" ">
+              <a [routerLink]="['/candidate/home']" routerActivelink="true" title="">Home</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div class="profile-sidebar">
+    <span class="close-profile"><i class="la la-close"></i></span>
+    <div class="can-detail-s">
+      <div class="cst"><img src="{{photourl}}" alt="" /></div>
+      <h3>{{username}}</h3>
+      <!-- <span><i>UX / UI Designer</i> at ABC Solutions</span> -->
+      <p>{{userCheck.email}}</p>
+      <!-- <p><i class="la la-map-marker"></i>Islamabad / Pakistan</p> -->
+    </div>
+    <div class="tree_widget-sec">
+      <ul>
+        <li><a [routerLink]="['/candidate/dashboard/profile']" routerActiveLink="true" title=""><i class="la la-file-text"></i>My Profile</a></li>
+        <li><a [routerLink]="['/candidate/dashboard/resume']" routerActivelink="true" title=""><i class="la la-briefcase"></i>My Resume</a></li>
+        <li><a [routerLink]="['/candidate/dashboard/shortlist']" routerActivelink="true" title=""><i class="la la-money"></i>Shorlisted Job</a></li>
+        <li><a [routerLink]="['/candidate/dashboard/applied-jobs']" routerActivelink="true" title=""><i class="la la-paper-plane"></i>Applied Job</a></li>
+        <li><a [routerLink]="['/candidate/dashboard/coverletter']" routerActivelink="true" title=""><i class="la la-file-text"></i>Cv & CoverLetter</a></li>
+        <li><a [routerLink]="['/candidate/dashboard/change-password']" routerActivelink="true" title=""><i class="la la-flash"></i>Change Password</a>
+        </li>
+        <li><a (click)="signOut();"><i class="la la-unlink"></i>Logout</a></li>
+      </ul>
+    </div>
+  </div>
